@@ -1,26 +1,64 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Weather App</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
 
-    <!-- Load CSS -->
-    <link rel="stylesheet" href="{% static 'weather/style.css' %}">
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Compiled CSS -->
+  <link rel="stylesheet" href="static/weather/style.css">
 </head>
 <body>
 
-    <div class="container">
-        <h1 class="title">🌤 Weather App</h1>
-        <p class="subtitle">Check current weather by city</p>
+  <!-- Header -->
+  <header class="app-header">
+    <h1>Weather Forecast</h1>
+    <p>Check real-time weather conditions</p>
+  </header>
 
-        <form class="search-box" method="GET" action="/weather/">
-            <input type="text" name="city" placeholder="Enter city name" required>
-            <button type="submit">Search</button>
-        </form>
-    </div>
+  <!-- Main Content -->
+  <main class="container">
+
+    <!-- Search -->
+    <section class="search-box">
+      <input type="text" id="cityInput" placeholder="Enter city name..." />
+      <button id="searchBtn">Search</button>
+    </section>
+
+    <!-- Weather Card -->
+    <section class="weather-card">
+      <div class="weather-header">
+        <h2 id="cityName">City Name</h2>
+        <img id="weatherIcon" src="" alt="Weather Icon" />
+      </div>
+
+      <div class="temperature">
+        <span id="temp">--</span>°C
+      </div>
+
+      <div class="weather-details">
+        <div class="detail">
+          <span class="label">Humidity</span>
+          <span id="humidity">--%</span>
+        </div>
+        <div class="detail">
+          <span class="label">Wind</span>
+          <span id="wind">-- km/h</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <p>© 2026 Weather App | Built with Django & API</p>
+  </footer>
 
 </body>
 </html>

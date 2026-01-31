@@ -35,4 +35,6 @@ def get_weather_details(request):
     }
     return JsonResponse(fetch_data)
 
+def home(request):
+    return render(request,'home.html')
 

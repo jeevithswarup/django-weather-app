@@ -1,112 +1,183 @@
-/* Reset */
+/* ==========================
+   Variables
+========================== */
+$primary: #4f46e5;
+$secondary: #6366f1;
+$background: #f4f6fb;
+$card-bg: #ffffff;
+$text-dark: #1f2937;
+$text-light: #6b7280;
+$border-radius: 16px;
+
+/* ==========================
+   Mixins
+========================== */
+@mixin flex-center($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin responsive {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+/* ==========================
+   Global Styles
+========================== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Background */
 body {
-    min-height: 100vh;
-    background: linear-gradient(to right, #74ebd5, #9face6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, $primary, $secondary);
+  min-height: 100vh;
+  color: $text-dark;
 }
 
-/* Main container */
-.container {
-    width: 100%;
-    max-width: 400px;
-    padding: 20px;
-    text-align: center;
-}
+/* ==========================
+   Header
+========================== */
+.app-header {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #fff;
 
-/* Titles */
-.title {
+  h1 {
     font-size: 2rem;
-    margin-bottom: 10px;
-}
+    font-weight: 600;
+  }
 
-.subtitle {
+  p {
     font-size: 1rem;
-    margin-bottom: 20px;
-    color: #333;
+    opacity: 0.9;
+    margin-top: 0.5rem;
+  }
 }
 
-/* Search box */
+/* ==========================
+   Container
+========================== */
+.container {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* ==========================
+   Search Box
+========================== */
 .search-box {
-    display: flex;
-    gap: 10px;
-}
+  @include flex-center;
+  background: $card-bg;
+  border-radius: $border-radius;
+  padding: 0.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 
-.search-box input {
+  input {
     flex: 1;
-    padding: 10px;
-    border-radius: 5px;
     border: none;
     outline: none;
-}
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
 
-.search-box button {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    background: #333;
+  button {
+    background: $primary;
     color: #fff;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 12px;
+    font-weight: 500;
     cursor: pointer;
-}
+    transition: background 0.3s;
 
-.search-box button:hover {
-    background: #555;
-}
-
-/* Weather card */
-.weather-card {
-    background: #ffffffcc;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.city-name {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.icon img {
-    width: 80px;
-    margin: 10px 0;
-}
-
-.temperature {
-    font-size: 2.5rem;
-    font-weight: bold;
-}
-
-.description {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-}
-
-/* Error box */
-.error-box {
-    background: #ffe5e5;
-    padding: 15px;
-    border-radius: 8px;
-    color: #b30000;
-}
-
-/* Links */
-.back-link {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-}
-
-/* Responsive */
-@media (max-width: 480px) {
-    .search-box {
-        flex-direction: column;
+    &:hover {
+      background: darken($primary, 8%);
     }
+  }
+}
+
+/* ==========================
+   Weather Card
+========================== */
+.weather-card {
+  background: $card-bg;
+  border-radius: $border-radius;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+
+  .weather-header {
+    @include flex-center(column);
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    img {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  .temperature {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 1rem 0;
+    color: $primary;
+  }
+
+  .weather-details {
+    @include flex-center;
+    gap: 2rem;
+
+    .detail {
+      @include flex-center(column);
+
+      .label {
+        font-size: 0.9rem;
+        color: $text-light;
+        margin-bottom: 0.3rem;
+      }
+
+      span {
+        font-size: 1.1rem;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+/* ==========================
+   Footer
+========================== */
+.app-footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: #fff;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* ==========================
+   Responsive
+========================== */
+@include responsive {
+  .container {
+    padding: 1rem;
+  }
+
+  .temperature {
+    font-size: 2.5rem;
+  }
 }
