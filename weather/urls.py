@@ -1,8 +1,6 @@
-from django.contrib import admin
 from django.urls import path
 from .views import*
 
 urlpatterns = [
- 
-  path('',Home,name="Home"),
+  path('weather_api/',get_weather_details,name="get_weather_details")
 ]
