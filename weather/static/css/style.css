@@ -1,0 +1,156 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #f8fafc;
+}
+
+/* APP CENTERING */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.header span {
+  font-size: 1rem;
+  color: #cbd5f5;
+}
+
+/* SEARCH BAR */
+.search {
+  display: flex;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 0.5rem;
+  width: 100%;
+  max-width: 420px;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.search input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+}
+
+.search input::placeholder {
+  color: rgba(255,255,255,0.7);
+}
+
+.search button {
+  background: linear-gradient(135deg, #7c7cff, #22d3ee);
+  border: none;
+  padding: 0.75rem 1.4rem;
+  border-radius: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #0f172a;
+}
+
+/* WEATHER CARD */
+.weather-glass {
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(18px);
+  border-radius: 26px;
+  padding: 2rem;
+  border: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+  text-align: center;
+}
+
+/* LOCATION */
+.location h2 {
+  font-size: 1.8rem;
+  color: #ffffff;
+}
+
+.location p {
+  color: #cbd5f5;
+  margin-top: 0.3rem;
+}
+
+/* MAIN WEATHER */
+.main-weather img {
+  width: 110px;
+  margin: 1rem 0;
+}
+
+.temp {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* STATS */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.stat {
+  background: rgba(255,255,255,0.2);
+  border-radius: 18px;
+  padding: 1rem;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.stat h4 {
+  font-size: 0.85rem;
+  color: #cbd5f5;
+}
+
+.stat p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* FOOTER */
+.footer {
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.75);
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .stats {
+    grid-template-columns: 1fr;
+  }
+}
+
