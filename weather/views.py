@@ -8,7 +8,7 @@ def get_weather_details(request):
 
 
     if not city:
-        return JsonResponse(
+        return render(request,'home.html',
             {"error": "city name is requried"},
             status=400
         )
@@ -18,7 +18,7 @@ def get_weather_details(request):
     response=requests.get(url)
     
     if response.status_code != 200:
-        return JsonResponse(
+        return render(request,'home.html',
             {"error":"City is not found"},status=404
         )
     
@@ -33,8 +33,6 @@ def get_weather_details(request):
         "weather":data["weather"][0]["description"],
          "wind_speed":data["wind"]["speed"]
     }
-    return JsonResponse(fetch_data)
+    return render(request,'home.html',fetch_data)
 
-def home(request):
-    return render(request,'home.html')
-
+ 
