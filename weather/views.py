@@ -34,6 +34,7 @@ def get_weather_details(request):
         "wind_speed":data["wind"]["speed"],
         "pressure":data["main"]["pressure"]
     }
+
     return render(request,'home.html',fetch_data)
 
  
