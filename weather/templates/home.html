@@ -32,14 +32,15 @@
     <section class="search">
       <form method="POST" action="{% url 'get_weather_details' %}">
         {% csrf_token %}
-      <input type="text" id="cityInput" name='ben'placeholder="Search city..." />
+      <input type="text" id="cityInput" name='city_name'placeholder="Search city..." />
       <button id="searchBtn">Get Weather</button>
       </form>
     </section>
-
+  
     <!-- Weather Card -->
+      {% if city %}
     <section class="weather-glass">
-
+    
       <div class="location">
         <h2 id="cityName">{{city_name}}</h2>
         <p id="description">{{weather}}</p>
@@ -63,12 +64,12 @@
         </div>
         <div class="stat">
           <h4>Pressure</h4>
-          <p id="pressure">-- hPa</p>
+          <p id="pressure">{{pressure}}hPa</p>
         </div>
       </div>
-
+    
     </section>
-
+   {% endif %}
     <!-- Footer -->
     <footer class="footer">
       <p>Built by Jeevith • Django Weather API</p>

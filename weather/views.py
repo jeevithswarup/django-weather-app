@@ -4,7 +4,7 @@ from django.http import JsonResponse
 from django.conf  import settings
 
 def get_weather_details(request):
-    city=request.POST.get('ben')
+    city=request.POST.get('city_name')
 
 
     if not city:
@@ -31,7 +31,8 @@ def get_weather_details(request):
         "temperature":data["main"]["temp"],
         "humidity":data["main"]["humidity"],
         "weather":data["weather"][0]["description"],
-         "wind_speed":data["wind"]["speed"]
+        "wind_speed":data["wind"]["speed"],
+        "pressure":data["main"]["pressure"]
     }
     return render(request,'home.html',fetch_data)
 
