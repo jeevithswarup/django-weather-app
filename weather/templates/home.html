@@ -10,25 +10,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
   <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
 
-  <!-- Background Orbs -->
+
   <div class="bg-orb orb-1"></div>
   <div class="bg-orb orb-2"></div>
 
-  <!-- App Wrapper -->
   <div class="app">
 
-    <!-- Header -->
     <header class="header">
       <h1>Atmos</h1>
       <span>Smart Weather Intelligence</span>
     </header>
 
-    <!-- Search -->
+   
     <section class="search">
       <form method="POST" action="{% url 'get_weather_details' %}">
         {% csrf_token %}
