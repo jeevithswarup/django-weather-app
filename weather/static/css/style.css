@@ -108,14 +108,15 @@ body {
 /* ---------------- Weather Grid ---------------- */
 .weather-grid {
   margin: 50px 0;
-  width: min(1100px, 85%);
+  width: 80%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 22px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
 }
 
 /* ---------------- Cards ---------------- */
 .weather-card {
+  min-height: 180px;
   padding: 24px 20px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
