@@ -28,7 +28,6 @@ def get_weather_details(request):
      rain = data["rain"].get("1h", data["rain"].get("3h", 0))
 
     fetch_data={
-       
         "city_name":data["name"],
         "temperature":data["main"]["temp"],
         "humidity":data["main"]["humidity"],
@@ -41,7 +40,6 @@ def get_weather_details(request):
         "rain": rain,
 
     }
-
     return render(request,'home.html',fetch_data)
 
  
