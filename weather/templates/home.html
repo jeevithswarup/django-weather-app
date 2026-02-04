@@ -13,12 +13,19 @@
   <header class="search-container glass">
       
         {% csrf_token %}
-      <input type="text" id="cityInput" name='city_name'placeholder="Search city..." />
+      <input type="text" id="cityInput" name='city_name'  placeholder="Search city..." />
       <button aria-label="Search">
         <i class="fa fa-search"></i>
       </button>
   </header>
 </form>
+
+{% if error %}
+<div class="error-card glass">
+  <p>{{ error }}</p>
+</div>
+{% endif %}
+
   <!-- Location + Temp -->
 <div class="main-weather glass">
     <h1>{{city_name}}</h1>
@@ -29,39 +36,38 @@
 
 <div class="weather-grid">
   <div class="weather-card glass">
-      <img src="assests/sunrise.png">
+      <img src="{% static 'assests/sunrise.png'%}">
       <h3>Sunrise</h3>
       <p>{{  sunrise }}</p>
   </div>
 
   <div class="weather-card glass">
-      <img src="assests/sunset.png">
+      <img src="{% static 'assests/sunset.png'%}">
       <h3>Sunset</h3>
       <p>{{ sunset }}</p>
   </div>
-
   <div class="weather-card glass">
-      <img src="assests/humidity.png">
+      <img src="{% static 'assests/humidity.png' %}">
       <h3>Humidity</h3>
-      <p>{{ humidity }}%</p>
+      <p>{{ humidity }} %</p>
   </div>
 
   <div class="weather-card glass">
-      <img src="assests/rainy.png" class="weather-icon" alt="icon">
+      <img src="{% static 'assests/rainy.png' %}" class="weather-icon" alt="icon">
       <h3>Rain</h3>
-      <p>{{ rain}}mm</p>
+      <p>{{ rain}} mm</p>
   </div>
 
   <div class="weather-card glass">
-      <img src="assests/wind.png">
+      <img src="{% static 'assests/wind.png'%}">
       <h3>Wind</h3>
-      <p>{{ wind_speed }}km/h</p>
+      <p>{{ wind_speed }} km/h</p>
   </div>
 
   <div class="weather-card glass">
-      <img src="assests/witness.png">
+      <img src="{% static 'assests/witness.png'%}">
       <h3>Visibility</h3>
-      <p>{{ visibility}}km</p>
+      <p>{{ visibility}} km</p>
   </div>
   </div>
 </body>
