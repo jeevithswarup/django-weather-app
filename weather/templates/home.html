@@ -8,26 +8,21 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-
-  <!-- <div class="search-container">
-    <input type="text" placeholder="Search city...">
-    <button>🔍</button>
-  </div> -->
-
    
-  <header class="search-container glass"></header>
-      <form method="POST" action="{% url 'get_weather_details' %}">
+<form method="POST" action="{% url 'get_weather_details' %}"> 
+  <header class="search-container glass">
+      
         {% csrf_token %}
       <input type="text" id="cityInput" name='city_name'placeholder="Search city..." />
-       <button aria-label="Search">
-      <i class="fa fa-search"></i>
-    </button>
-    </form>
-</header>
+      <button aria-label="Search">
+        <i class="fa fa-search"></i>
+      </button>
+  </header>
+</form>
   <!-- Location + Temp -->
 <div class="main-weather glass">
     <h1>{{city_name}}</h1>
-    <h2>{{ temperature}}</h2>
+    <h2>{{ temperature}}<span>°C</span></h2>
     <p>{{ weather }}</p>
 </div>
 
@@ -48,25 +43,25 @@
   <div class="weather-card glass">
       <img src="assests/humidity.png">
       <h3>Humidity</h3>
-      <p>{{ humidity }}</p>
+      <p>{{ humidity }}%</p>
   </div>
 
   <div class="weather-card glass">
       <img src="assests/rainy.png" class="weather-icon" alt="icon">
       <h3>Rain</h3>
-      <p>{{ rain}}</p>
+      <p>{{ rain}}mm</p>
   </div>
 
   <div class="weather-card glass">
       <img src="assests/wind.png">
       <h3>Wind</h3>
-      <p>{{ wind_speed }}</p>
+      <p>{{ wind_speed }}km/h</p>
   </div>
 
   <div class="weather-card glass">
       <img src="assests/witness.png">
       <h3>Visibility</h3>
-      <p>{{ visibility}}</p>
+      <p>{{ visibility}}km</p>
   </div>
   </div>
 </body>

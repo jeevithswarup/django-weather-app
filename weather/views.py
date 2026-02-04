@@ -37,7 +37,7 @@ def get_weather_details(request):
         "pressure":data["main"]["pressure"],
         "visibility":data.get("visibility",0)/1000,
         "sunrise": datetime.fromtimestamp(data["sys"]["sunrise"]),
-        "sunrise": datetime.fromtimestamp(data["sys"]["sunset"]),
+        "sunset": datetime.fromtimestamp(data["sys"]["sunset"]),
         "rain": rain,
 
     }
