@@ -60,3 +60,14 @@ python -m venv venv
 source venv/bin/activate   # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 python manage.py runserver
+
+
+📁 Example Features Displayed
+<table>
+<th>Feature	Description</th>
+City Search	Search weather information by city name
+Temperature	Displays current temperature
+Humidity	Shows humidity level
+Weather Status	Condition description and icon
+Live API Data	Real-time weather data
+</table>
