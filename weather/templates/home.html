@@ -9,7 +9,7 @@
 </head>
 <body>
    
-<form method="POST" action="{% url 'get_weather_details' %}"> 
+<form method="GET" action="{% url 'get_weather_details' %}"> 
   <header class="search-container glass">
       
         {% csrf_token %}

@@ -4,7 +4,7 @@ from django.http import JsonResponse
 from django.conf  import settings
 from datetime import datetime
 def get_weather_details(request):
-    city=request.POST.get('city_name')
+    city=request.GET.get('city_name')
 
 
     if not city:
