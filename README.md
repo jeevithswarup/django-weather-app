@@ -69,33 +69,3 @@ pip install -r requirements.txt
 python manage.py runserver
 *open web browser*
 http://127.0.0.1:8000/
-
-📈 Learning Outcomes
-
-By working on this project, you will gain:
-
-✔ Hands-on experience with API integration
-✔ Understanding of Django request–response cycle
-✔ Skills in JSON data handling
-✔ Dynamic content rendering using templates
-✔ Practical backend development knowledge
-
-🚀 Future Enhancements
-
-Multi-day weather forecast
-
-Location-based weather detection
-
-Responsive UI improvements
-
-Weather analytics and charts
-
-Dark mode interface
-
-📄 License
-
-This project is licensed under the MIT License.👨‍💻 Author
-
-Jeevith Swarup
-Computer Science Student
-GitHub: https://github.com/jeevithswarup
