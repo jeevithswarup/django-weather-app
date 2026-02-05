@@ -11,8 +11,7 @@
    
 <form method="GET" action="{% url 'get_weather_details' %}"> 
   <header class="search-container glass">
-      
-        {% csrf_token %}
+      {% csrf_token %}
       <input type="text"  name='city_name'  placeholder="Search city..." />
       <button aria-label="Search">
         <i class="fa fa-search"></i>
@@ -20,11 +19,7 @@
   </header>
 </form>
 
-{% if error %}
-<div class="error-card glass">
-  <p>{{ error }}</p>
-</div>
-{% endif %}
+
 
   <!-- Location + Temp -->
 <div class="main-weather glass">
