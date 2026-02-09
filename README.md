@@ -53,7 +53,6 @@ This entire process happens in real time for every user request.
 
 Follow these steps to run the project locally:
 
-```bash
 git clone https://github.com/jeevithswarup/django-weather-app.git
 cd django-weather-app
 python -m venv venv
@@ -70,7 +69,9 @@ python manage.py runserver
 *open web browser*
 http://127.0.0.1:8000/
 
-📈 Learning Outcomes
+
+
+## 📈 Learning Outcomes
 
 By working on this project, you will gain:
 
@@ -80,7 +81,7 @@ By working on this project, you will gain:
 ✔ Dynamic content rendering using templates
 ✔ Practical backend development knowledge
 
-🚀 Future Enhancements
+## 🚀 Future Enhancements
 
 Multi-day weather forecast
 
@@ -92,7 +93,7 @@ Weather analytics and charts
 
 Dark mode interface
 
-📄 License
+## 📄 License
 
 This project is licensed under the MIT License.👨‍💻 Author
 
