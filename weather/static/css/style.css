@@ -7,16 +7,6 @@
 
 body {
   min-height: 100vh;
-  background: linear-gradient(
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
-    ),
-    url("https://www.vecteezy.com/free-vector/weather-background")
-      center / cover no-repeat;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #ffffff;
 }
 
 /* ---------------- Glass Effect ---------------- */
